@@ -31,4 +31,7 @@ public class ArrUtils {
         return i;
     }
 
+    public String getPictureUrl() {
+        return "http://b-ssl.duitang.com/uploads/item/201808/24/20180824163744_tlueh.jpg";
+    }
 }
