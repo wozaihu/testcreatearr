@@ -3,6 +3,8 @@ package com.example.testcreatearr;
 import android.content.Context;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class ArrUtils {
     private static ArrUtils utils;
 
@@ -23,4 +25,10 @@ public class ArrUtils {
     public void showToast(Context context, String s) {
         Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
     }
+
+    public int getRandomNumber() {
+        int i = new Random(999).nextInt();
+        return i;
+    }
+
 }
