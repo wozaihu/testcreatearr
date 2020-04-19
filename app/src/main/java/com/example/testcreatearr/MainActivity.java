@@ -22,16 +22,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tv_explain:
-                ArrUtils.getInstance().showToast(this, "点击了测试arr打包");
-                break;
-            case R.id.btn_1:
-                Toast.makeText(this, "点击了弹出Dialog", Toast.LENGTH_LONG).show();
-                MyDialog.getInstance().showDialog(this, "MainActivity调用", "放一首歌来听");
-                break;
-            default:
-                break;
+        int id = v.getId();
+        if (id == R.id.tv_explain) {
+            ArrUtils.getInstance().showToast(this, "点击了测试arr打包");
+        } else if (id == R.id.btn_1) {
+            Toast.makeText(this, "点击了弹出Dialog", Toast.LENGTH_LONG).show();
+            MyDialog.getInstance().showDialog(this, "MainActivity调用", "放一首歌来听");
         }
     }
 
