@@ -27,3 +27,27 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
+
+apply plugin: 'maven'
+uploadArchives {
+    repositories.mavenDeployer {
+        // 本地存放目录(自行选择)，可放在gradle.properties文件中引用
+        def mavenDirPath = file('F:\\mavendir')
+
+        // 必须双引号，单引号不会转义$
+        repository(url: "file://${mavenDirPath.absolutePath}")
+
+        pom.project {
+            // 可以随意取，一般取包名
+            groupId "com.example.testcreatearr"
+
+            // 可以随意取，一般取库的名字
+            artifactId "app"
+
+            // 版本号
+            version "1.0.0"
+        }
+    }
+
+
+}
